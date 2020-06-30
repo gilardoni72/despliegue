@@ -12,9 +12,9 @@ pipeline {
             }
             steps {
                 script {
-                    app = docker.build("gilardoni72/prueba")
+                    app = sudo docker.build("gilardoni72/test")
                     app.inside {
-                        sh 'echo $(curl localhost:80)'
+                        sh 'echo $(curl localhost:8080)'
                     }
                 }
             }
